@@ -1,0 +1,23 @@
+baseURL = 'https://NotesFromAfield.com/'
+languageCode = 'en-us'
+title = 'Notes From Afield'
+theme = 'zen'
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    weight = 1
+    identifier = "home"
+    url = "/"
+  
+  [[menu.main]]
+    name = "Posts"
+    weight = 2
+    identifier = "posts"
+    url = "/posts/"
+
+  [[menu.main]]
+    name = "About"
+    weight = 3
+    identifier = "about"
+    url = "/about/"

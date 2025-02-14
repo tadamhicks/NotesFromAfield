@@ -1,0 +1,32 @@
++++
+date = '2025-02-11T12:28:42-05:00'
+draft = false
+title = 'About'
++++
+# About
+
+Welcome to my little corner of the internet.  If you don't find it entertaining I hope you at least find it helpful.  And yes, that was a general nod to the genius of [Red Green](https://www.google.com/search?q=red+green+show)
+
+Some things about me you should know
+
+Name: Adam Hicks
+Home: Eaton, NH
+Family: Yes, 4 daughters and a 20 year marriage
+Hobbies: Skiing, cycling, running, swimming, hiking, but MOST IMPORTANTLY I love thinking and reading
+Job: [Field CTO for Trace3](https://www.linkedin.com/in/adam-hicks-8b80595/), a US based Digital Consulting company
+
+No About page can do any justice to meeting another person.  In lieu of that, the following narrative should give you some insight and background.  When I read About pages I'm often looking to answer the question of whether I can relate to the person and whether I can trust them and their insight.  Given that some of this space will be dedicated to my opinions on tech and business, and the fact I spend an awful lot of time working, I will spend some time reviewing where I've come from and led me to where I am.
+
+I didn't start in tech.  In fact, my first degree is in philosophy.  Students of philosophy tend to go one of two ways, generally speaking, and that is toward continental philosophy or toward analytic philosophy.  While I greatly value my background in studying the classics and the history of philosophy, I quickly found myself drawn to the more analytic subject matter.  In pursuit of the *structure* of reason itself, I wound up chasing a bachelor's degree in my second passion: pure mathematics.  Books like *Emperor's New Mind* by Roger Penrose and professors passionate about subjects like encryption (thank you John Kiltinen) and Optimization Theory (thank you Jailan Zalmai) really insipired me to be insanely curious about the potential to model reason mathematically.  This, in turn, is what inspired a deep passion for computer science and an insatiable curiosity regarding Artificial Intelligence at a relatively young age.
+
+Academic interests in my life gave way to a need to provide for a young family, and I entered the corporate workforce over pursuing the life of a pauper through graduate school.  While I often kick myself, I've been thrilled to have an extremely adventure filled career, and advanced degrees are certainly always there should I desire them.  
+
+I couldn't have entered the workforce at a worse time, to be honest.  In 2007 things were booming and on their way to a significant crash less than 2 years later.  I didn't have sufficient professional contacts or experience and the next few years were bumpy, but I learned a lot.  I worked in sales, I worked as a business analyst, I worked in sales operations. I pursued graduate school in Computer Science, and I eventually landed in corporate IT as a developer, managing DevOps processes, doing Site Reliability, and even plying my wares in developing large computer vision and machine learning solutions.  While it wasn't the hallowed halls of the ivory tower that is academia, the hands on understanding of how Enterprise businesses run and operate and how systems are integrated, secured, funded, and utilized was an amazing post-graduate education that set me up for the success that I've found for myself sense.
+
+It was my passion for emerging tech and my ability to find common ground through every corner of large businesses that put me in a client facing role at Morpheus Data.  It was far from my first startup, having tried to build a few businesses in my previous years of trial by fire, but it was the first one that felt really real and catapulted me into the world of Silicon Valley and big tech.  I spent almost 5 years there growing substantially as a professional, as a person, and that was my first crack as a Global Field CTO.  I plan on having a blog entry on what a Field CTO is and will discuss my journey to this role there.
+
+Morpheus was great, and in many ways felt like a family.  But I was worried that Morpheus was making a market pivot that did not align with where my interests were as a technologist, so I left and joined honeycomb.io as a pre-sales architect.  While the mechanics of the role were old hat, the opportunity to do a job I was comfortable with in a sector that I was like a newborn babe in was amazing.  I soaked up everything I could about the APM space and can say in no uncertain terms that what I learned there has completely shaped how I think about Enterprise maturity in platform engineering.  Not only is the technology significantly ahead of almost all other comers, but the company itself operates on incredible mature team topologies and behaviors that still blow my mind to consider.  I've never worked inside of Google, and can only imagine how they have leveraged technology such as kubernetes to cut through origanizational boundaries to increase velocity, but I have to feel that some of the ex-googlers at honeycomb brought at least a bit of that there.
+
+Careers often grow or change because of opportunity.  I'm not old, but I'm not young, and as I've become more comfortable with my strangths and weaknesses I've learned a lot about what makes me unique in my own way and where I need to lean in order to be successful.  I was offered an incredible opportunity to join Trace3 to lead a consulting practice around Automation, which grew to Platform Engineering encompassing Observability, and knew I couldn't say no.  The chance to learn how to lead, and bring my ability to think strategically into action, was too rich to pass up.  It's here that I've been for 3 years now, and am again in the role of a Field CTO representing our entire Cloud Portfolio to assist our largest customers face and solve some of their most difficult challenges.  
+
+It is from this vantage point that many of my entries into this space will have their roots.  My clients span industries and roles in organizations large and small(er).  My partners are emerging tech and established vendors alike.  Our job in consulting is rarely easy, but it does come with the priveleged point of view where we watch the world shape and shift with time, and from this vantage, if we're astute in our observations, we grow wisdom and perspective that, while stronly opinionated, is likely of tremendous value.  
