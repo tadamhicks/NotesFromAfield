@@ -3,24 +3,23 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Notes From Afield</title>
-<link rel="alternate" type="application/rss+xml" title="rss" href="http://localhost:1313/index.xml">
+<title>Aws Eks – Notes From Afield</title>
 
 <meta name="created" content="2025-04-17T07:51:52-0400">
 <meta name="modified" content="2025-04-17T07:51:52-0400">
 
 
 <meta property="og:site_name" content="Notes From Afield">
-<meta property="og:title" content="Notes From Afield">
-<meta property="og:url" content="http://localhost:1313/">
-<meta property="og:type" content="website">
+<meta property="og:title" content="Aws Eks">
+<meta property="og:url" content="http://localhost:1313/posts/aws-eks/">
+<meta property="og:type" content="article">
 
 <meta name="generator" content="Hugo 0.146.4">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 
 
-<link rel="canonical" href="http://localhost:1313/">
+<link rel="canonical" href="http://localhost:1313/posts/aws-eks/">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -34,8 +33,11 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "url" : "http://localhost:1313/",
-    "name": "Notes From Afield",
+    "headline": "Aws Eks",
+    "datePublished": "2025-04-17T07:51:52-04:00",
+    "dateModified": "2025-04-17T07:51:52-04:00",
+    "url" : "http://localhost:1313/posts/aws-eks/",
+    
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http://localhost:1313/"
@@ -59,7 +61,7 @@
 
 </head>
 
-<body class="list-page front">
+<body class="single-page">
 <div class="page layout__page">
 <header class="header layout__header">
 <a href="/" title="Home" rel="home" class="header__logo">
@@ -80,13 +82,11 @@
 </ul>
 </nav>
 <main class="main layout__main">
-
-
-<article class="list-view list-view--posts">
+<article class="single-view single-view--posts">
 <header>
-<h2 class="title mt--s"><a href="/posts/aws-eks/">Aws Eks</a></h2>
-
+<h1 class="title">Aws Eks</h1>
 </header>
+
 <p>I just found something out.  I deployed EKS Auto Mode and used the Add On made available to provision the EBS CSI Driver with EKS Pod Identity.  Frustrated I could not get a PVC to provision a PV successfully and had all manner of errors realted to topology problems.  Then I found an AWS example for this and they used a different StorageClass that looks like:</p>
 <pre><code>apiVersion: storage.k8s.io/v1
 kind: StorageClass
@@ -101,18 +101,9 @@ parameters:
   encrypted: &quot;true&quot;
 </code></pre>
 <p>So I deployed this, made it default, and voila my PVCs started spinning up PVs.  Boom.  Seems a glaring hole in AWS&rsquo;s tech right now, though, and I&rsquo;m surprised I haven&rsquo;t found more information online regarding this issue.  I&rsquo;m documenting here as much for my own memory as anything else.</p>
+
+
 </article>
-
-<article class="list-view list-view--posts">
-<header>
-<h2 class="title mt--s"><a href="/posts/my-first-post/">My First Post</a></h2>
-
-</header>
-<h2 id="what-are-we-doing-here">What are we doing here</h2>
-<p>I&rsquo;ve always enjoyed the written word.  In a world where we have so much content at our fingertips, be it video or audio, short form or long form, there is something about the written word itself that is almost magical.  To this point I remarked to my spouse the other day how hard it is for movies to convey certain fundamental elements of experience such as smell.  Whenever a movie does this, whether through scripted dialogue or some other mechanism, I am very appreciative of both the writer and the director in their attention to detail that draws the viewer in.  However, in a book this is almost the defacto, for without a description of the important elements of a scene there is no book. This flexibility gives almost complete creative control to the author of the written word.</p>
-</article>
-
-
 </main>
 
 

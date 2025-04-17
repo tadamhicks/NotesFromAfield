@@ -6,8 +6,15 @@
     <description>Recent content on Notes From Afield</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Feb 2025 12:28:42 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 17 Apr 2025 07:51:52 -0400</lastBuildDate>
       <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aws Eks</title>
+      <link>http://localhost:1313/posts/aws-eks/</link>
+      <pubDate>Thu, 17 Apr 2025 07:51:52 -0400</pubDate>
+      <guid>http://localhost:1313/posts/aws-eks/</guid>
+      <description>&lt;p&gt;I just found something out.  I deployed EKS Auto Mode and used the Add On made available to provision the EBS CSI Driver with EKS Pod Identity.  Frustrated I could not get a PVC to provision a PV successfully and had all manner of errors realted to topology problems.  Then I found an AWS example for this and they used a different StorageClass that looks like:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;apiVersion: storage.k8s.io/v1&#xA;kind: StorageClass&#xA;metadata:&#xA;  name: auto-ebs-sc&#xA;  annotations:&#xA;    storageclass.kubernetes.io/is-default-class: &amp;quot;true&amp;quot;&#xA;provisioner: ebs.csi.eks.amazonaws.com&#xA;volumeBindingMode: WaitForFirstConsumer&#xA;parameters:&#xA;  type: gp3&#xA;  encrypted: &amp;quot;true&amp;quot;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;So I deployed this, made it default, and voila my PVCs started spinning up PVs.  Boom.  Seems a glaring hole in AWS&amp;rsquo;s tech right now, though, and I&amp;rsquo;m surprised I haven&amp;rsquo;t found more information online regarding this issue.  I&amp;rsquo;m documenting here as much for my own memory as anything else.&lt;/p&gt;&#xA;</description>
+    </item>
     <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>

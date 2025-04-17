@@ -6,8 +6,8 @@
 <title>Posts – Notes From Afield</title>
 <link rel="alternate" type="application/rss+xml" title="rss" href="http://localhost:1313/posts/index.xml">
 
-<meta name="created" content="2025-02-11T10:37:43-0500">
-<meta name="modified" content="2025-02-11T10:37:43-0500">
+<meta name="created" content="2025-04-17T07:51:52-0400">
+<meta name="modified" content="2025-04-17T07:51:52-0400">
 
 
 <meta property="og:site_name" content="Notes From Afield">
@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://localhost:1313/posts/">
 <meta property="og:type" content="website">
 
-<meta name="generator" content="Hugo 0.143.1">
+<meta name="generator" content="Hugo 0.146.4">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 
@@ -55,6 +55,8 @@
 
 
 
+
+
 </head>
 
 <body class="list-page">
@@ -70,8 +72,8 @@
 </div>
 </header>
 
-<nav class="main-menu layout__navigation" aria-label="Main menu">
-<ul class="navbar">
+<nav class="main-menu mx--xs layout__navigation" aria-label="Main menu">
+<ul class="flex-inline mx--0">
 <li><a href="/"><span>Home</span></a></li>
 <li><a href="/posts/"><span>Posts</span></a></li>
 <li><a href="/about/"><span>About</span></a></li>
@@ -83,6 +85,27 @@
 </header>
 
 
+
+<article class="list-view list-view--posts">
+<header>
+<h2 class="title mt--s"><a href="/posts/aws-eks/">Aws Eks</a></h2>
+
+</header>
+<p>I just found something out.  I deployed EKS Auto Mode and used the Add On made available to provision the EBS CSI Driver with EKS Pod Identity.  Frustrated I could not get a PVC to provision a PV successfully and had all manner of errors realted to topology problems.  Then I found an AWS example for this and they used a different StorageClass that looks like:</p>
+<pre><code>apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: auto-ebs-sc
+  annotations:
+    storageclass.kubernetes.io/is-default-class: &quot;true&quot;
+provisioner: ebs.csi.eks.amazonaws.com
+volumeBindingMode: WaitForFirstConsumer
+parameters:
+  type: gp3
+  encrypted: &quot;true&quot;
+</code></pre>
+<p>So I deployed this, made it default, and voila my PVCs started spinning up PVs.  Boom.  Seems a glaring hole in AWS&rsquo;s tech right now, though, and I&rsquo;m surprised I haven&rsquo;t found more information online regarding this issue.  I&rsquo;m documenting here as much for my own memory as anything else.</p>
+</article>
 
 <article class="list-view list-view--posts">
 <header>
@@ -99,6 +122,7 @@
 
 <footer class="footer layout__footer mt--l">
 <p><span>© Notes From Afield</span></p>
+
 
 
 </footer>
