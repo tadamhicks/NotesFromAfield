@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="nojs" lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>Posts – Notes From Afield</title>
-<link rel="alternate" type="application/rss+xml" title="rss" href="http://localhost:1313/posts/index.xml">
+<link rel="alternate" type="application/rss+xml" title="rss" href="https://NotesFromAfield.com/posts/index.xml">
 
 <meta name="created" content="2025-04-17T07:51:52-0400">
 <meta name="modified" content="2025-04-17T07:51:52-0400">
@@ -12,7 +12,7 @@
 
 <meta property="og:site_name" content="Notes From Afield">
 <meta property="og:title" content="Posts">
-<meta property="og:url" content="http://localhost:1313/posts/">
+<meta property="og:url" content="https://NotesFromAfield.com/posts/">
 <meta property="og:type" content="website">
 
 <meta name="generator" content="Hugo 0.146.4">
@@ -20,37 +20,37 @@
 <meta name="theme-color" content="#ffffff">
 
 
-<link rel="canonical" href="http://localhost:1313/posts/">
+<link rel="canonical" href="https://NotesFromAfield.com/posts/">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 
-<link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/styles.2fa1df15b347581e582e5e8899cf40bdf7908f76e104ed06eeba4c6443012e8c.css">
+<link rel="stylesheet" href="/css/print.1912ba13950e7434fb50dd14d3951bc7f57bb0c16b4f204158b72f0b3844f7a1.css" media="print">
 
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "url" : "http://localhost:1313/posts/",
+    "url" : "https://NotesFromAfield.com/posts/",
     "name": "Posts",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "http://localhost:1313/"
+      "@id": "https://NotesFromAfield.com/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Notes From Afield",
-      "url": "http://localhost:1313/"
+      "url": "https://NotesFromAfield.com/"
     }
   }
 </script>
 
-<script src="/js/script-early.13eca1c44b48885517a4dc79e153a2da63e3825a7a37c271c88558877cb570b5.js"></script>
+<script src="/js/script-early.2d6255816e36e34bd1948dc5c26ede35687a256c4e2e516e0cd75f383a510c6a.js"></script>
 
-<script defer src="/js/script.5ed52cdd956021fd7194109b25dbc5cbe93a1085461b9f29b1284df94c19481c.js"></script>
+<script defer src="/js/script.f2979a93a325fecf9605263bd141398a311c8e23388ed7dcff74f92f7e632866.js"></script>
 
 
 
@@ -88,23 +88,13 @@
 
 <article class="list-view list-view--posts">
 <header>
-<h2 class="title mt--s"><a href="/posts/aws-eks/">Aws Eks</a></h2>
+<h2 class="title mt--s"><a href="/posts/aws-eks/">AWS EKS Auto Mode and EBS CSI Driver Topology Issues</a></h2>
 
 </header>
-<p>I just found something out.  I deployed EKS Auto Mode and used the Add On made available to provision the EBS CSI Driver with EKS Pod Identity.  Frustrated I could not get a PVC to provision a PV successfully and had all manner of errors realted to topology problems.  Then I found an AWS example for this and they used a different StorageClass that looks like:</p>
-<pre><code>apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: auto-ebs-sc
-  annotations:
-    storageclass.kubernetes.io/is-default-class: &quot;true&quot;
-provisioner: ebs.csi.eks.amazonaws.com
-volumeBindingMode: WaitForFirstConsumer
-parameters:
-  type: gp3
-  encrypted: &quot;true&quot;
+<p>I just found something really interesting out regarding AWS EKS Auto Mode and the EBS CSI Driver.  I deployed EKS Auto Mode and used the Add On made available to provision the EBS CSI Driver with EKS Pod Identity.  Frustrated I could not get a PVC to provision a PV successfully and had all manner of errors realted to topology problems.  Relevant message from the kubernetes API was:</p>
+<pre><code>failed to provision volume with StorageClass &quot;gp2&quot;: error generating accessibility requirements: no topology key found on CSINode i-02515766f5107ad3b
 </code></pre>
-<p>So I deployed this, made it default, and voila my PVCs started spinning up PVs.  Boom.  Seems a glaring hole in AWS&rsquo;s tech right now, though, and I&rsquo;m surprised I haven&rsquo;t found more information online regarding this issue.  I&rsquo;m documenting here as much for my own memory as anything else.</p>
+<p>I spent way too many hours rebuilding clusters, tweaking things, playing with IAM Roles, removing and re-adding Add Ons.  I was going crazy.</p>
 </article>
 
 <article class="list-view list-view--posts">
